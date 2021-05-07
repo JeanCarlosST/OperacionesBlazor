@@ -1,0 +1,49 @@
+﻿@page "/operations"
+
+<h3>Operaciones</h3>
+
+<div class="row">
+    <div class="col-5">
+        <table class="table">
+            <tbody>
+                <tr class="table-borderless">
+                    <td>Primer número </td>
+                    <td><input @bind="number1" /></td>
+                </tr>
+                <tr class="table-borderless">
+                    <td>Segundo número </td>
+                    <td><input @bind="number2" /></td>
+                </tr>
+                <tr class="table-bordered">
+                    <td>La suma es: </td>
+                    <td class="text-center">@addition</td>
+                </tr>
+                <tr class="table-bordered">
+                    <td>La resta es: </td>
+                    <td class="text-center">@substration</td>
+                </tr>
+                <tr class="table-bordered">
+                    <td>La multiplicación es: </td>
+                    <td class="text-center">@multiplication</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<button class="btn btn-primary" @onclick="Execute">Ejecutar</button>
+
+@code {
+    private float number1;
+    private float number2;
+    private float addition;
+    private float substration;
+    private float multiplication;
+
+    private void Execute()
+    {
+        addition = number1 + number2;
+        substration = number1 - number2;
+        multiplication = number1 / number2;
+    }
+}
